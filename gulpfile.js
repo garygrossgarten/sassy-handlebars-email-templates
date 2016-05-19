@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var handlebars = require('gulp-compile-handlebars');
+var handlebars = require('gulp-compile-handlebars');  // not sure why but this doesn't seem to play nice with gulp-load-plugins
 var $ = require('gulp-load-plugins')();
 
 // compile sass
