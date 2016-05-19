@@ -1,3 +1,21 @@
-.body {
-    background-color: red;
+$yellow: #ffc600;
+$font-stack: 'Lato', sans-serif;
+
+body {
+  background-color: #fff;
+    font-family: $font-stack;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+div.entry {
+    background-color: $yellow;
+    
+    h1 {
+        color: #000;
+    }
 }

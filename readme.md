@@ -9,3 +9,4 @@ First run `npm install`
 
 Then run `gulp` to compile.
 
+Run `gulp clean` to remove the build directory.

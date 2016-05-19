@@ -16,6 +16,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-scss-lint": "^0.3.9",
-    "gulp-compile-handlebars": "^0.6.1"
+    "gulp-compile-handlebars": "^0.6.1",
+    "rimraf": "^2.3.2"
   }
 }
