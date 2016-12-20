@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var handlebars = require('gulp-compile-handlebars');  // not sure why but this doesn't seem to play nice with gulp-load-plugins
+var handlebars = require('gulp-compile-handlebars'); // not sure why but this doesn't seem to play nice with gulp-load-plugins
 var rimraf = require('rimraf').sync;
 var $ = require('gulp-load-plugins')();
 
@@ -14,7 +14,7 @@ gulp.task('sass', function () {
                 'and_chr >= 2.3'
             ]
         }))
-        .pipe(gulp.dest('build/css'));
+        .pipe(gulp.dest('_build/css'));
 
     //todo: lint scss?
 });
@@ -23,26 +23,25 @@ gulp.task('sass', function () {
 gulp.task('handlebars', ['sass'], function () {
 
     var templateData = {
-        title: 'Test Template',
-        body: 'Real data would go here, but this is a test...'
-    },
+            title: 'Test Template',
+            body: 'Real data would go here, but this is a test...'
+        },
         options = {
-            ignorePartials: true,
+            ignorePartials: false,
             batch: ['./src/templates/partials']
         }
 
-    gulp.src('src/templates/**/*.hbs')
+    gulp.src('src/templates/*.hbs')
         .pipe(handlebars(templateData, options))
         .pipe($.rename('sample.html'))
-        .pipe(gulp.dest('./build'))
+        .pipe(gulp.dest('./_build'))
         .pipe($.juice())
-        .pipe(gulp.dest('./build'))
+        .pipe(gulp.dest('./_build'))
 });
 
 // clean the build dir
-gulp.task('clean', function() {
-  rimraf('build');
+gulp.task('clean', function () {
+    rimraf('_build');
 });
 
 gulp.task('default', ['handlebars']);
-
